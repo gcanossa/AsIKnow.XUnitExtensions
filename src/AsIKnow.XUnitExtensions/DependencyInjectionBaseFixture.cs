@@ -18,6 +18,11 @@ namespace AsIKnow.XUnitExtensions
 
         public DependencyInjectionBaseFixture()
         {
+            Init();
+        }
+
+        protected virtual void Init()
+        {
             BuildConfigurationRoot();
 
             PrepareServicePorvider();

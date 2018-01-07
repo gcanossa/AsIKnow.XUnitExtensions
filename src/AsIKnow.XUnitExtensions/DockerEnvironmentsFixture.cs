@@ -19,15 +19,20 @@ namespace AsIKnow.XUnitExtensions
         protected DependencyChecker DependencyChecker { get; set; }
 
         public DockerEnvironmentsFixture()
+            :base()
+        {
+        }
+
+        protected override void Init()
         {
             BuildConfigurationRoot();
-            
+
             Options = Configuration.GetSection($"Test:DockerEnvironments:{typeof(T).Name}").Get<DockerEnvironmentsFixtureOptions>();
-            
+
             PrepareServicePorvider();
 
             FindAndExecConfigure();
-            
+
             StopContainers();
             StartContainers();
 
