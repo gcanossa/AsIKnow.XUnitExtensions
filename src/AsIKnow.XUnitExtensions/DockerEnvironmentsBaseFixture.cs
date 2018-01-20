@@ -12,13 +12,13 @@ using Xunit;
 
 namespace AsIKnow.XUnitExtensions
 {
-    public abstract class DockerEnvironmentsFixture<T> : DependencyInjectionBaseFixture<T>, IDisposable
+    public abstract class DockerEnvironmentsBaseFixture<T> : DependencyInjectionBaseFixture<T>, IDisposable
     {
         public DockerEnvironmentsFixtureOptions Options { get; protected set; }
         
         protected DependencyChecker DependencyChecker { get; set; }
 
-        public DockerEnvironmentsFixture()
+        public DockerEnvironmentsBaseFixture()
             :base()
         {
         }
