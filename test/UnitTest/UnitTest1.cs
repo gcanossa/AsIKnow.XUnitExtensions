@@ -10,26 +10,32 @@ namespace UnitTest
     {
         private static List<string> Order = new List<string>();
 
-        [Fact]
+        [Trait("Category", "Order")]
+        [Fact(DisplayName = nameof(Total))]
         [TestPriority(1000)]
         public void Total()
         {
             Assert.Equal(new string[] { nameof(Test2), nameof(Test1), nameof(Test3) }, Order);
         }
 
-        [Fact]
+        [Trait("Category", "Order")]
+        [Fact(DisplayName = nameof(Test1))]
         [TestPriority(2)]
         public void Test1()
         {
             Order.Add(nameof(Test1));
         }
-        [Fact]
+
+        [Trait("Category", "Order")]
+        [Fact(DisplayName = nameof(Test2))]
         [TestPriority(1)]
         public void Test2()
         {
             Order.Add(nameof(Test2));
         }
-        [Fact]
+
+        [Trait("Category", "Order")]
+        [Fact(DisplayName = nameof(Test3))]
         [TestPriority(2)]
         public void Test3()
         {

@@ -56,7 +56,7 @@ namespace AsIKnow.XUnitExtensions
             if (minfo != null)
             {
                 Dictionary<ParameterInfo, object> pars = minfo.GetParameters().ToDictionary(p => p, p => (object)null);
-                foreach (ParameterInfo key in pars.Keys)
+                foreach (ParameterInfo key in pars.Keys.ToArray())
                 {
                     pars[key] = ServiceProvider.GetRequiredService(key.ParameterType);
                 }
