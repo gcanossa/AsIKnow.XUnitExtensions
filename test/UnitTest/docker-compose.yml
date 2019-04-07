@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  database:
+    image: postgres:11.1-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_PASSWORD: root
+  db_admin:
+    image: dpage/pgadmin4
+    ports:
+      - "8001:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root
+      PGADMIN_DEFAULT_PASSWORD: root
